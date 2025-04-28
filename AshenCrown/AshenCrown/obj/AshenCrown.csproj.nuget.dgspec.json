@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Web\\Project2025\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj": {}
+    "D:\\Web\\Project2025\\Clone\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj": {}
   },
   "projects": {
-    "D:\\Web\\Project2025\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj": {
+    "D:\\Web\\Project2025\\Clone\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Web\\Project2025\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj",
+        "projectUniqueName": "D:\\Web\\Project2025\\Clone\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj",
         "projectName": "AshenCrown",
-        "projectPath": "D:\\Web\\Project2025\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj",
+        "projectPath": "D:\\Web\\Project2025\\Clone\\Ashen-Crown\\AshenCrown\\AshenCrown\\AshenCrown.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Web\\Project2025\\Ashen-Crown\\AshenCrown\\AshenCrown\\obj\\",
+        "outputPath": "D:\\Web\\Project2025\\Clone\\Ashen-Crown\\AshenCrown\\AshenCrown\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Visual Studio 2022\\Shared\\NuGetPackages"
