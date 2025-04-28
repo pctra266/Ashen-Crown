@@ -1,0 +1,22 @@
+# Ignore all .vs folders (Visual Studio caches)
+**/.vs/
+
+# Ignore all build output
+**/bin/
+**/obj/
+
+# (Optional) global .NET exclusions
+**/wwwroot/lib/
+node_modules/
+
+# Editor, IDE, and OS files
+.vs/
+*.user
+*.suo
+*.log
+.idea/
+.vscode/
+
+# Other app artifacts
+artifacts/
+out/
