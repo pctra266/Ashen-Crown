@@ -1,3 +1,6 @@
+using AshenCrown.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace AshenCrown
 {
     public class Program
@@ -5,10 +8,13 @@ namespace AshenCrown
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            var conn = builder.Configuration.GetConnectionString("DefaultConnection");
+            //builder.Services.AddDbContext<ACDbContext>(options =>
+            // options.UseSqlServer(conn));
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<ApplicationDbContext>(option =>
+            option.UseSqlServer(conn));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

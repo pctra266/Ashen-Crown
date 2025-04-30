@@ -1,0 +1,25 @@
+﻿
+@model  IEnumerable<AshenCrown.Domain.Entities.Mission>
+<h1>Mission List</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Content</th>
+			<th>Done</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var obj in Model)
+		{
+			<tr>
+				<td>@obj.Id</td>
+				<td>@obj.Content</td>
+				<td>@obj.IsComplete</td>
+				<td><a asp-controller="Mission" asp-action="Update" asp-route-missionId="@obj.Id" >Edit</a></td>
+				<td><a asp-controller="Mission" asp-action="Delete" asp-route-missionId="@obj.Id" >Delete</a></td>
+			</tr>
+		}
+	</tbody>
+</table>
+<a asp-controller="Mission" asp-action="Create" class="btn btn-primary">Create New Mission</a>

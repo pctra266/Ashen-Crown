@@ -1,0 +1,15 @@
+﻿@model AshenCrown.Domain.Entities.Mission
+<h1>Create Mission</h1>
+<form method="post">
+    <div>
+        <label asp-for="Content"></label>
+        <input asp-for="Content"/>
+        <span asp-validation-for="Content"/>
+    </div>
+    <div>
+        <label asp-for="IsComplete"></label>
+        <input asp-for="IsComplete"/>
+        
+    </div>
+    <button type="submit">Submit</button>
+</form>
