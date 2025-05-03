@@ -1,7 +1,8 @@
 using AshenCrown.Infrastructure.Data;
+using AshenCrown.Web.Hub2;
 using Microsoft.EntityFrameworkCore;
 
-namespace AshenCrown
+namespace AshenCrown.Web
 {
     public class Program
     {
@@ -15,6 +16,7 @@ namespace AshenCrown
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
             option.UseSqlServer(conn));
+            builder.Services.AddSignalR();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -31,7 +33,7 @@ namespace AshenCrown
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.MapHub<CountHub>("/hub");
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");

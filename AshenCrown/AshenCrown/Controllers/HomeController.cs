@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using AshenCrown.Models;
+using AshenCrown.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AshenCrown.Controllers
+namespace AshenCrown.Web.Controllers
 {
     public class HomeController : Controller
     {

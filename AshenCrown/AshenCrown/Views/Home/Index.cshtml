@@ -1,6 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-@model Player
-The world is ruin, you are @Model.Name
+﻿@model Player
+<div>
+    Total Count: <span id="totalDisplay">0</span>
+</div>
 
+<!-- ASP.NET Core SignalR client -->
+
+
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/connect.js"></script>

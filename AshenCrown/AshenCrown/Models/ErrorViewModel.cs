@@ -1,4 +1,4 @@
-namespace AshenCrown.Models
+namespace AshenCrown.Web.Models
 {
     public class ErrorViewModel
     {
