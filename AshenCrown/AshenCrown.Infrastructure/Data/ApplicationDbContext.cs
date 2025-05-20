@@ -1,30 +1,33 @@
-﻿using System;
+﻿using AshenCrown.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using AshenCrown.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 
 namespace AshenCrown.Infrastructure.Data
 {
     public class ApplicationDbContext: DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            
+
         }
-
-        public DbSet<Mission> Missions { get; set; }
-
+        public DbSet<Job> Jobs { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Mission>().HasData(
-                new Mission
+            modelBuilder.Entity<Job>().HasData(
+                new Job
                 {
                     Id = 1,
-                    Content = "The darkness is going, We need to ....",
-                    IsComplete = false
+                    Title = "C# Backend Development Intern (ASP.NET)",
+                    Company = "Example Tech Corp",
+                    Location = "Remote",
+                    Url = "https://example.com/jobs/123",
+                    ExperienceRequirement = 0 ,
+                    Position ="Intern"
                 });
         }
     }

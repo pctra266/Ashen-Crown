@@ -1,0 +1,6 @@
+@AshenCrown.Web_HostAddress = http://localhost:5051
+
+GET {{AshenCrown.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

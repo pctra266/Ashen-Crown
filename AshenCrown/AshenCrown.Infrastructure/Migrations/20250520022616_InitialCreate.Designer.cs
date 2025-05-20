@@ -11,20 +11,20 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AshenCrown.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250430161937_SeedMissiontoDb")]
-    partial class SeedMissiontoDb
+    [Migration("20250520022616_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AshenCrown.Domain.Entities.Mission", b =>
+            modelBuilder.Entity("AshenCrown.Domain.Entities.Job", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,22 +32,38 @@ namespace AshenCrown.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Content")
+                    b.Property<string>("Company")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsComplete")
-                        .HasColumnType("bit");
+                    b.Property<int>("ExperienceRequirement")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Missions");
+                    b.ToTable("Jobs");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            Content = "The darkness is going, We need to ....",
-                            IsComplete = false
+                            Company = "Example Tech Corp",
+                            ExperienceRequirement = 0,
+                            Location = "Remote",
+                            Title = "C# Backend Development Intern (ASP.NET)",
+                            Url = "https://example.com/jobs/123"
                         });
                 });
 #pragma warning restore 612, 618
