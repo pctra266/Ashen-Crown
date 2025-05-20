@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AshenCrown.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/jobs")]
     [ApiController]
     public class JobController : ControllerBase
     {

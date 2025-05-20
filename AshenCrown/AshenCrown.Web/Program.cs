@@ -14,8 +14,18 @@ namespace AshenCrown.Web
             var builder = WebApplication.CreateBuilder(args);
             
             builder.Services.AddHttpClient();
+            var provider = builder.Services.BuildServiceProvider();
+            var configuration = provider.GetRequiredService<IConfiguration>();
+            builder.Services.AddCors(options =>
+            {
+                var frontEndUrl = configuration.GetValue<string>("frontend_url");
 
-            
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(frontEndUrl).AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
             builder.Services.AddControllers();
             var conn = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDbContext>(option =>
@@ -39,6 +49,7 @@ namespace AshenCrown.Web
             });
             var app = builder.Build();
             app.MapControllers();
+            app.UseCors();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
